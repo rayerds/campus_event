@@ -8,7 +8,7 @@ SECRET_KEY = 'replace-with-your-secret-key'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["campus-event-8gsy.onrender.com"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -95,3 +95,5 @@ if not DEBUG:
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CSRF_TRUSTED_ORIGINS = ["https://campus-event-8gsy.onrender.com"]

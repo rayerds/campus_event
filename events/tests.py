@@ -60,8 +60,8 @@ class EventTests(TestCase):
             'description': 'Just a test',
             'date': '2025-03-20',
             'time': '12:00:00',
-            'location': 'Campus Hall',
-            'sync_to_calendar': True
+            'location': 'Campus Hall'
+            # 'sync_to_calendar': True
         }
         response = self.client.post(reverse('create_event'), data=data)
 
@@ -88,7 +88,7 @@ class EventTests(TestCase):
         
         self.assertRedirects(response, reverse('event_detail', args=[event.id]))
 
-        
+        # 检查Registration表
         reg = Registration.objects.filter(user=self.user, event=event).first()
         self.assertIsNotNone(reg)
         self.assertEqual(reg.status, 'Registered')

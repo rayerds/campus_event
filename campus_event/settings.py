@@ -82,6 +82,12 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# 允许 Django 访问 `static/` 目录（如果你有前端静态文件）
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # 确保这个路径存在
+]
 
 if not DEBUG:
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)

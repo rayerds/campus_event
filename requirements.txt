@@ -5,6 +5,8 @@ google-auth
 google-auth-httplib2
 google-auth-oauthlib
 psycopg2-binary
+gunicorn
+uvicorn
 
 dj-database-url
 whitenoise

@@ -1,0 +1,16 @@
+.btn-outline-dark:hover {
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5); /* Makes white text stand out */
+}
+
+
+.helptext, .help-text, .text-muted {
+    font-size: 0.7rem; 
+    color: #646060;    /* Change the font size and color of the prompt text */
+}
+
+
+/* This command is used only to check whether the css file works properly  */
+/* body {
+    border: 5px solid red; 
+} 
+*/

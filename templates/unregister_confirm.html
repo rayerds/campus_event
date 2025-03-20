@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Unregister from {{ event.title }}</h2>
+<p>Are you sure you want to remove this event from your schedule?</p>
+<form method="post" class="d-inline">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, please</button>
+</form>
+<a href="{% url 'my_events' %}" class="btn btn-secondary ms-2">No, go back</a>
+{% endblock %}

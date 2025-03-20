@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card p-4 shadow-sm" style="max-width: 600px; width: 100%;">
+        <h2 class="mb-4 text-center">
+            {% if edit_mode %}Edit Event{% else %}Create New Event{% endif %}
+        </h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Title -->
+            <div class="mb-3">
+                <label for="id_title" class="form-label">Title</label>
+                <input type="text" name="title" id="id_title" class="form-control" required>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <label for="id_description" class="form-label">Description</label>
+                <textarea name="description" id="id_description" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <!-- Date -->
+            <div class="mb-3">
+                <label for="id_date" class="form-label">Date</label>
+                <input type="date" name="date" id="id_date" class="form-control" required>
+            </div>
+
+            <!-- Time -->
+            <div class="mb-3">
+                <label for="id_time" class="form-label">Time</label>
+                <input type="time" name="time" id="id_time" class="form-control" required>
+            </div>
+
+            <!-- Location -->
+            <div class="mb-3">
+                <label for="id_location" class="form-label">Location</label>
+                <input type="text" name="location" id="id_location" class="form-control">
+            </div>
+
+            <!-- Google Calendar Sync -->
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="sync_to_calendar" id="id_sync_to_calendar" checked>
+                <label class="form-check-label" for="id_sync_to_calendar">
+                    Sync to Google Calendar?
+                </label>
+            </div>
+
+            <!-- submit -->
+            <button type="submit" class="btn btn-primary w-100">
+                {% if edit_mode %}Update{% else %}Create Event{% endif %}
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+``

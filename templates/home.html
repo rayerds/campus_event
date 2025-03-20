@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h2 class="mb-4">Welcome to the Campus Event System</h2>
+    <p class="lead">
+        This platform allows you to create and register for campus events easily.
+    </p>
+    <a href="{% url 'event_list' %}" class="btn btn-primary btn-lg mt-3">View All Events</a>
+</div>
+{% endblock %}

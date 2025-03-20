@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Event List</h2>
+
+<ul class="list-group">
+{% for event in events %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <a href="{% url 'event_detail' event.id %}" class="fw-bold text-decoration-none">
+            {{ event.title }}
+          </a>
+          <span class="text-muted ms-2">{{ event.date }} {{ event.time }}</span>
+          <br>
+          <small class="text-secondary">by {{ event.organizer.username }}</small>
+        </div>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

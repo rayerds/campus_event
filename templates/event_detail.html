@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">{{ event.title }}</h2>
+<div class="mb-3">
+  <strong>Description:</strong> {{ event.description }}
+</div>
+<div class="mb-3">
+  <strong>Date:</strong> {{ event.date }}
+  <strong>Time:</strong> {{ event.time }}
+</div>
+<div class="mb-3">
+  <strong>Location:</strong> {{ event.location }}
+</div>
+<div class="mb-3">
+  <strong>Organizer:</strong> {{ event.organizer.username }}
+</div>
+
+{% if not registered %}
+    <a href="{% url 'register_for_event' event.id %}" class="btn btn-primary">Register for this Event</a>
+{% else %}
+    <p class="text-success">You are already registered for this event.</p>
+{% endif %}
+{% endblock %}

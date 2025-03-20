@@ -6,7 +6,6 @@ This guide explains how to deploy a Django project on **Render** using **Bluepri
 Before starting, make sure you have:
 - A **Render** account ([Sign up here](https://dashboard.render.com/))
 - A **GitHub** repository with your Django project
-- A **PostgreSQL database** (recommended for production)
 
 ---
 

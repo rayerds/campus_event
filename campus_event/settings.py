@@ -56,7 +56,7 @@ WSGI_APPLICATION = 'campus_event.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default='postgresql://postgres:postgres@localhost:5432/campus_db',
         conn_max_age=600
     )
 }
@@ -89,5 +89,3 @@ if not DEBUG:
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-STATICFILES_DIRS = [os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")]

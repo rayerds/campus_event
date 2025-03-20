@@ -8,7 +8,7 @@ SECRET_KEY = 'replace-with-your-secret-key'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["campus-event-8gsy.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
